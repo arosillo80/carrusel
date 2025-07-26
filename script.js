@@ -7,14 +7,14 @@ fetch('comments.csv')
                 const comments = results.data;
                 const container = document.getElementById('comments-container');
                 comments.forEach(comment => {
-                    if (comment['fecha del comentario'] && comment['Nombre del cliente'] && comment['Título del comentario'] && comment['puntuación del comentario']) {
+                    if (comment['fecha del comentario'] && comment['Nombre del cliente'] && comment['Titulo del comentario'] && comment['puntuación del comentario']) {
                         const slide = document.createElement('div');
                         slide.className = 'swiper-slide';
                         slide.innerHTML = `
-                            <div class="title">${comment['Título del comentario']}</div>
+                            <div class="title">${comment['Titulo del comentario']}</div>
                             <div class="author">${comment['Nombre del cliente']}</div>
                             <div class="date">${comment['fecha del comentario']}</div>
-                            <div class="rating">${'★'.repeat(parseInt(comment['puntuación del comentario']))}</div>
+                            <div class="rating">${'★'.repeat(parseInt(comment['puntuacion del comentario']))}</div>
                         `;
                         container.appendChild(slide);
                     }
